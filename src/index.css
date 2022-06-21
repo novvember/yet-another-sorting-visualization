@@ -8,4 +8,6 @@
 
 @import url(./blocks/header.css);
 
+@import url(./blocks/general-controls.css);
+
 @import url(./blocks/footer.css);
