@@ -9,14 +9,16 @@ export function getNewArray(n) {
 }
 
 export function shuffleArray(array) {
-  let currentIndex = array.length;
+  const newArray = array.slice();
+
+  let currentIndex = newArray.length;
   let randomIndex;
 
   while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
-    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    [newArray[currentIndex], newArray[randomIndex]] = [newArray[randomIndex], newArray[currentIndex]];
   }
 
-  return array;
+  return newArray;
 }

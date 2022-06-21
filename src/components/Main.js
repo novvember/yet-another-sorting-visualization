@@ -13,11 +13,16 @@ function Main() {
   const [barsNumber, setBarsNumber] = React.useState(100);
   const [barsArray, setBarsArray] = React.useState( shuffleArray(getNewArray(barsNumber)) );
 
+  function handleShuffle() {
+    setBarsArray(shuffleArray);
+  }
+
   return (
     <main>
       <GeneralControls
         barsNumber={barsNumber}
         onBarsChange={setBarsNumber}
+        onShuffle={handleShuffle}
       />
       <Playground>
         <Field
