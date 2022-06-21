@@ -1,20 +1,14 @@
 import GeneralControls from "./GeneralControls";
 import Playground from "./Playground";
+import Field from "./Field";
 
 function Main() {
   return (
     <main>
       <GeneralControls />
       <Playground>
-      <ul className="field playground__field">
-      <li className="element">Element</li>
-      <li className="element">Element</li>
-      <li className="element">Element</li>
-      <li className="element">Element</li>
-      <li className="element">Element</li>
-      <li className="element">Element</li>
-      <li className="element">Element</li>
-    </ul>
+        <Field />
+
 
     <div className="controls playground__controls">
       <h2 className="controls__title">Способ сортировки</h2>

@@ -1,0 +1,7 @@
+.element {
+  background-color: #ddd;
+  height: 100%;
+  box-sizing: border-box;
+  flex-basis: 1px;
+  flex-grow: 1;
+}

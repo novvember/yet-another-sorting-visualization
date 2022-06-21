@@ -11,5 +11,7 @@
 @import url(./blocks/general-controls.css);
 
 @import url(./blocks/playground.css);
+@import url(./blocks/field.css);
+@import url(./blocks/element.css);
 
 @import url(./blocks/footer.css);
