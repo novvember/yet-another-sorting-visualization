@@ -2,3 +2,8 @@
 
 @import url(./vendor/fonts/Merriweather/Merriweather.css);
 @import url(./vendor/fonts/OpenSans/OpenSans.css);
+
+@import url(./blocks/page.css);
+@import url(./blocks/content.css);
+
+@import url(./blocks/header.css);
