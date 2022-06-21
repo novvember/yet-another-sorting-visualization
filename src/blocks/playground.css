@@ -1,0 +1,21 @@
+.playground {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  grid-template-areas:
+    "field controls"
+    "field results";
+  padding: 1em 0;
+  gap: 1em;
+}
+
+.playground__field {
+  grid-area: field;
+}
+
+.playground__controls {
+  grid-area: controls;
+}
+
+.playground__results {
+  grid-area: results;
+}

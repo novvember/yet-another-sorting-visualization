@@ -1,37 +1,38 @@
 import GeneralControls from "./GeneralControls";
+import Playground from "./Playground";
 
 function Main() {
   return (
     <main>
       <GeneralControls />
+      <Playground>
+      <ul className="field playground__field">
+      <li className="element">Element</li>
+      <li className="element">Element</li>
+      <li className="element">Element</li>
+      <li className="element">Element</li>
+      <li className="element">Element</li>
+      <li className="element">Element</li>
+      <li className="element">Element</li>
+    </ul>
 
-      <div className="playground">
-        <ul className="field">
-          <li className="element">Element</li>
-          <li className="element">Element</li>
-          <li className="element">Element</li>
-          <li className="element">Element</li>
-          <li className="element">Element</li>
-          <li className="element">Element</li>
-          <li className="element">Element</li>
-        </ul>
+    <div className="controls playground__controls">
+      <h2 className="controls__title">Способ сортировки</h2>
+      <select name="algorithm">
+        <option value="value1">Сортировка пузырьком</option>
+        <option value="value2">Сортировка перемешиванием</option>
+        <option value="value3">Сортировка вставками</option>
+      </select>
+    </div>
 
-        <div className="controls">
-          <h2 className="controls__title">Способ сортировки</h2>
-          <select name="algorithm">
-            <option value="value1">Сортировка пузырьком</option>
-            <option value="value2">Сортировка перемешиванием</option>
-            <option value="value3">Сортировка вставками</option>
-          </select>
-        </div>
+    <div className="results playground__results">
+      <p className="results__result">Операций:</p>
+      <p className="results__result">Время:</p>
+    </div>
 
-        <div className="results">
-          <p className="results__result">Операций:</p>
-          <p className="results__result">Время:</p>
-        </div>
 
-      </div>
 
+      </Playground>
     </main>
   );
 }
