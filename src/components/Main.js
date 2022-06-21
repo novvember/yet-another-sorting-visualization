@@ -2,6 +2,7 @@ import GeneralControls from "./GeneralControls";
 import Playground from "./Playground";
 import Field from "./Field";
 import Controls from "./Controls";
+import Results from "./Results";
 
 function Main() {
   return (
@@ -10,17 +11,7 @@ function Main() {
       <Playground>
         <Field />
         <Controls />
-
-
-
-
-    <div className="results playground__results">
-      <p className="results__result">Операций:</p>
-      <p className="results__result">Время:</p>
-    </div>
-
-
-
+        <Results />
       </Playground>
     </main>
   );
