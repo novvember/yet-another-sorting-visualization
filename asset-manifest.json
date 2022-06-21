@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/yet-another-sorting-visualization/static/css/main.987e155c.css",
+    "main.js": "/yet-another-sorting-visualization/static/js/main.ef47736b.js",
+    "static/media/Merriweather-Regular.ttf": "/yet-another-sorting-visualization/static/media/Merriweather-Regular.da67ca8c38ef44c4773d.ttf",
+    "static/media/Merriweather-Light.ttf": "/yet-another-sorting-visualization/static/media/Merriweather-Light.43706a2883eb57c79284.ttf",
+    "static/media/Merriweather-BoldItalic.ttf": "/yet-another-sorting-visualization/static/media/Merriweather-BoldItalic.16252c125b2ba7eaf70a.ttf",
+    "static/media/Merriweather-Italic.ttf": "/yet-another-sorting-visualization/static/media/Merriweather-Italic.c011994c363b810ae1f6.ttf",
+    "static/media/Merriweather-BlackItalic.ttf": "/yet-another-sorting-visualization/static/media/Merriweather-BlackItalic.120bcdce9061e8894028.ttf",
+    "static/media/Merriweather-LightItalic.ttf": "/yet-another-sorting-visualization/static/media/Merriweather-LightItalic.7156ba6851d2a94064dd.ttf",
+    "static/media/Merriweather-Bold.ttf": "/yet-another-sorting-visualization/static/media/Merriweather-Bold.ae39f743fdcf8f64531e.ttf",
+    "static/media/Merriweather-Black.ttf": "/yet-another-sorting-visualization/static/media/Merriweather-Black.cfe2aa3843d8cb416e1a.ttf",
+    "static/media/OpenSans-ExtraBoldItalic.ttf": "/yet-another-sorting-visualization/static/media/OpenSans-ExtraBoldItalic.f539b62a07758863efec.ttf",
+    "static/media/OpenSans-LightItalic.ttf": "/yet-another-sorting-visualization/static/media/OpenSans-LightItalic.34eb76e1135c646df8f9.ttf",
+    "static/media/OpenSans-MediumItalic.ttf": "/yet-another-sorting-visualization/static/media/OpenSans-MediumItalic.4d4312a9af9f5f85f6bf.ttf",
+    "static/media/OpenSans-SemiBoldItalic.ttf": "/yet-another-sorting-visualization/static/media/OpenSans-SemiBoldItalic.5d2b4174202860d9e550.ttf",
+    "static/media/OpenSans-Italic.ttf": "/yet-another-sorting-visualization/static/media/OpenSans-Italic.79c81eb67c8c53b33a29.ttf",
+    "static/media/OpenSans-BoldItalic.ttf": "/yet-another-sorting-visualization/static/media/OpenSans-BoldItalic.ed58bc283d35f0fd48b3.ttf",
+    "static/media/OpenSans-ExtraBold.ttf": "/yet-another-sorting-visualization/static/media/OpenSans-ExtraBold.312244ca5ea57843f749.ttf",
+    "static/media/OpenSans-Medium.ttf": "/yet-another-sorting-visualization/static/media/OpenSans-Medium.f0cdede053a22b990af8.ttf",
+    "static/media/OpenSans-Regular.ttf": "/yet-another-sorting-visualization/static/media/OpenSans-Regular.d7d7b8359eeb9cddfba6.ttf",
+    "static/media/OpenSans-Bold.ttf": "/yet-another-sorting-visualization/static/media/OpenSans-Bold.6e27168fc8a5a200a026.ttf",
+    "static/media/OpenSans-Light.ttf": "/yet-another-sorting-visualization/static/media/OpenSans-Light.846a12caf01a940847a7.ttf",
+    "static/media/OpenSans-SemiBold.ttf": "/yet-another-sorting-visualization/static/media/OpenSans-SemiBold.d7261533b9a545ddc769.ttf",
+    "index.html": "/yet-another-sorting-visualization/index.html",
+    "main.987e155c.css.map": "/yet-another-sorting-visualization/static/css/main.987e155c.css.map",
+    "main.ef47736b.js.map": "/yet-another-sorting-visualization/static/js/main.ef47736b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.987e155c.css",
+    "static/js/main.ef47736b.js"
+  ]
+}
