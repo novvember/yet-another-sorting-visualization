@@ -5,3 +5,9 @@
   justify-content: center;
   gap: 1em;
 }
+
+.general-controls__create-form {
+  display: flex;
+  gap: .5em;
+  align-items: baseline;
+}
