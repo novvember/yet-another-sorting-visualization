@@ -1,5 +1,6 @@
 .element {
-  background-color: #ddd;
+  background-color: darkgrey;
+  border-radius: 2px;
   height: 100%;
   box-sizing: border-box;
   flex-basis: 1px;

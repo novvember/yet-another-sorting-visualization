@@ -8,8 +8,33 @@
   gap: 1em;
 }
 
+@media (max-width: 768px) {
+  .playground {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "field field"
+      "controls results";
+  }
+}
+
+@media (max-width: 425px) {
+  .playground {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "field"
+      "controls"
+      "results";
+  }
+}
+
 .playground__field {
   grid-area: field;
+}
+
+@media (max-width: 768px) {
+  .playground__field {
+    margin: 0 -1em;
+  }
 }
 
 .playground__controls {
