@@ -1,0 +1,11 @@
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+}
+
+.controls__title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 300;
+}
