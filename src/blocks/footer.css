@@ -1,0 +1,15 @@
+.footer {
+  padding: 3em 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+}
+
+.footer__text {
+  margin: 0;
+  font-family: 'Merriweather', serif;
+  font-size: 1em;
+  text-align: center;
+  opacity: .8;
+}
