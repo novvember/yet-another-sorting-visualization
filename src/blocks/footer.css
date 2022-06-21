@@ -1,5 +1,5 @@
 .footer {
-  padding: 3em 0;
+  padding: 4em 0 3em;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -8,8 +8,8 @@
 
 .footer__text {
   margin: 0;
-  font-family: 'Merriweather', serif;
+  font-family: 'Open Sans', serif;
   font-size: 1em;
   text-align: center;
-  opacity: .8;
+  opacity: .7;
 }

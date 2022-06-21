@@ -12,3 +12,12 @@
   background-color: #ecebe8;
   color: #000;
 }
+
+/* Ссылки */
+a {
+  color: inherit;
+}
+
+a:hover {
+  opacity: .7;
+}
