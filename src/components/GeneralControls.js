@@ -15,7 +15,7 @@ function GeneralControls() {
 
       <button type="button" className="input">🔀 Перемешать</button>
       <button type="button" className="input input_important">📈 Запустить</button>
-      <button type="button" className="input input_important">📉 Запустить наоборот</button>
+      <button type="button" className="input">📉 Запустить наоборот</button>
     </div>
   );
 }
