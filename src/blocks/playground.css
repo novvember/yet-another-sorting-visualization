@@ -10,15 +10,6 @@
 
 @media (max-width: 768px) {
   .playground {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "field field"
-      "controls results";
-  }
-}
-
-@media (max-width: 425px) {
-  .playground {
     grid-template-columns: 1fr;
     grid-template-areas:
       "field"

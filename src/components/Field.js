@@ -1,9 +1,16 @@
 import Element from "./Element";
 
-function Field() {
+function Field({barsArray}) {
   return (
     <ul className="field playground__field">
-      {(new Array(100).fill('')).map((number, pos) => (<Element key={pos} />))}
+      {barsArray.map(number => {
+        return (
+          <Element
+            key={number}
+            value={number}
+          />
+        )
+      })}
     </ul>
   );
 }

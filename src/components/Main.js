@@ -1,15 +1,28 @@
+import React from "react";
+
 import GeneralControls from "./GeneralControls";
 import Playground from "./Playground";
 import Field from "./Field";
 import Controls from "./Controls";
 import Results from "./Results";
 
+import {getNewArray, shuffleArray} from '../utils/utils.js';
+
+
 function Main() {
+  const [barsNumber, setBarsNumber] = React.useState(100);
+  const [barsArray, setBarsArray] = React.useState( shuffleArray(getNewArray(barsNumber)) );
+
   return (
     <main>
-      <GeneralControls />
+      <GeneralControls
+        barsNumber={barsNumber}
+        onBarsChange={setBarsNumber}
+      />
       <Playground>
-        <Field />
+        <Field
+          barsArray={barsArray}
+        />
         <Controls />
         <Results />
       </Playground>

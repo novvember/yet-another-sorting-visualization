@@ -1,12 +1,29 @@
-function GeneralControls() {
+import React from "react";
+
+function GeneralControls({barsNumber, onBarsChange}) {
+
+  const [barsValue, setBarsValue] = React.useState(barsNumber);
+
+  function handleBarsChange(event) {
+    setBarsValue(event.target.value);
+  }
+
+  function handleBarsSubmit(event) {
+    event.preventDefault();
+    onBarsChange(barsValue);
+  }
+
   return (
     <div className="general-controls">
-      <form className="input input_type_form">
+      <form className="input input_type_form" onSubmit={handleBarsSubmit}>
         <label>
           <input
             className="input input_type_form-input"
             type="number"
-            // value="100"
+            minLength="10"
+            maxLength="1000"
+            value={barsValue}
+            onChange={handleBarsChange}
           ></input>
           <span> столбиков</span>
         </label>

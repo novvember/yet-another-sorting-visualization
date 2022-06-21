@@ -1,7 +1,7 @@
-function Element() {
+function Element({value}) {
 
   return (
-    <li className="element"></li>
+    <li className="element" style={{height: `${value}%`}}></li>
   );
 }
 
