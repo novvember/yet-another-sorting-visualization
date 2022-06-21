@@ -13,6 +13,10 @@ function Main() {
   const [barsNumber, setBarsNumber] = React.useState(100);
   const [barsArray, setBarsArray] = React.useState( shuffleArray(getNewArray(barsNumber)) );
 
+  React.useEffect(() => {
+    setBarsArray( shuffleArray(getNewArray(barsNumber)) );
+  }, [barsNumber])
+
   function handleShuffle() {
     setBarsArray(shuffleArray);
   }
