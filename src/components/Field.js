@@ -6,8 +6,8 @@ function Field({barsArray}) {
       {barsArray.map(number => {
         return (
           <Element
-            key={number}
-            value={number}
+            key={number.value}
+            height={number.height}
           />
         )
       })}

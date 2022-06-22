@@ -1,8 +1,27 @@
+function getRelativeValue({value, minValue = 1, maxValue}) {
+  const relativeValue = (value - minValue) / (maxValue - minValue);
+  return relativeValue;
+}
+
+function getAjustedValue({relativeValue, minAjusted = 1, maxAdjusted = 100,
+}) {
+  const adjustedValue = relativeValue * (maxAdjusted - minAjusted) + minAjusted;
+  return adjustedValue;
+}
+
 export function getNewArray(n) {
   const newArray = [];
 
   for (let i = 1; i <= n; i++) {
-    newArray.push(i);
+    const element = {
+      value: i,
+      height: getAjustedValue({
+        relativeValue: getRelativeValue({value: i, maxValue: n})
+      }),
+      isActive: false,
+    };
+
+    newArray.push(element);
   }
 
   return newArray;
