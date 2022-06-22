@@ -1,12 +1,10 @@
 import React from "react";
 
+import NumberInput from "./NumberInput";
+
 function GeneralControls({barsNumber, onBarsChange, onShuffle}) {
 
   const [barsValue, setBarsValue] = React.useState(barsNumber);
-
-  function handleBarsChange(event) {
-    setBarsValue(event.target.value);
-  }
 
   function handleBarsSubmit(event) {
     event.preventDefault();
@@ -17,14 +15,12 @@ function GeneralControls({barsNumber, onBarsChange, onShuffle}) {
     <div className="general-controls">
       <form className="input input_type_form" onSubmit={handleBarsSubmit}>
         <label>
-          <input
-            className="input input_type_form-input"
-            type="number"
+          <NumberInput
             minLength="10"
             maxLength="1000"
-            value={barsValue}
-            onChange={handleBarsChange}
-          ></input>
+            defaultValue={barsValue}
+            onChange={setBarsValue}
+          />
           <span> столбиков</span>
         </label>
         <button type="submit" className="input input_type_form-button">➡</button>

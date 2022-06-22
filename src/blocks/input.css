@@ -51,7 +51,7 @@
   padding: 0;
   border-radius: 0;
   text-align: right;
-  border-bottom: 1px dotted #242424;
+  border-bottom: 1px dashed #242424;
 }
 
 .input_type_form:active,
@@ -59,6 +59,9 @@
   opacity: 1;
 }
 
+.input_type_form-input_error {
+  border-bottom-color: tomato;
+}
 
 .input_type_form-button {
   cursor: pointer;
