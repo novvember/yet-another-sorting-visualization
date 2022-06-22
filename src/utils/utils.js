@@ -5,10 +5,10 @@ function getRelativeValue({value, minValue = 1, maxValue}) {
   return relativeValue;
 }
 
-function getAjustedValue({relativeValue, minAjusted = 1, maxAdjusted = 100,
+function getHeight({relativeValue, minHeight = 1, maxHeight = 100,
 }) {
-  const adjustedValue = relativeValue * (maxAdjusted - minAjusted) + minAjusted;
-  return adjustedValue;
+  const height = relativeValue * (maxHeight - minHeight) + minHeight;
+  return height;
 }
 
 export function getNewArray(n) {
@@ -19,7 +19,7 @@ export function getNewArray(n) {
 
     const element = {
       value: i,
-      height: getAjustedValue({ relativeValue: percent }),
+      height: getHeight({ relativeValue: percent }),
       color: hslGradient.getColor(percent * 100),
       isActive: false,
     };
