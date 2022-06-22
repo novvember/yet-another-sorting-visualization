@@ -27,12 +27,12 @@ function GeneralControls({barsNumber, onBarsChange, onShuffle}) {
           ></input>
           <span> столбиков</span>
         </label>
-        <button type="submit" className="input input_type_form-button">→</button>
+        <button type="submit" className="input input_type_form-button">➡</button>
       </form>
 
       <button type="button" className="input" onClick={onShuffle}>🔀 Перемешать</button>
-      <button type="button" className="input input_important">📈 Запустить</button>
-      <button type="button" className="input">📉 Запустить наоборот</button>
+      <button type="button" className="input input_important">⏭ Запустить</button>
+      <button type="button" className="input">⏮ Запустить наоборот</button>
     </div>
   );
 }
