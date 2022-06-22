@@ -29,14 +29,9 @@ class HslGradient {
   _getInterval(percent) {
     let min = 0;
     let max = 100;
-
     for (let key of this._intervals) {
-      if (percent >= +key) {
-        min = +key;
-      } else {
-        max = +key;
-        break;
-      }
+      if (percent > +key) min = +key;
+      if (percent < +key) max = +key;
     }
     return [min, max];
   }
