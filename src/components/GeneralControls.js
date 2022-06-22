@@ -27,8 +27,8 @@ function GeneralControls({barsNumber, onBarsChange, onShuffle}) {
       </form>
 
       <button type="button" className="input" onClick={onShuffle}>🔀 Перемешать</button>
-      <button type="button" className="input input_important">⏭ Запустить</button>
-      <button type="button" className="input">⏮ Запустить наоборот</button>
+      <button type="button" className="input input_important" disabled>⏭ Запустить</button>
+      <button type="button" className="input" disabled>⏮ Запустить наоборот</button>
     </div>
   );
 }

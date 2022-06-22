@@ -20,6 +20,12 @@
   box-sizing: border-box;
 }
 
+.input:disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: .4;
+}
+
 .input_important {
   background-color: #e75874 ;
   color: #fff;
