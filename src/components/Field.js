@@ -3,11 +3,12 @@ import Element from "./Element";
 function Field({barsArray}) {
   return (
     <ul className="field playground__field">
-      {barsArray.map(number => {
+      {barsArray.map(bar => {
         return (
           <Element
-            key={number.value}
-            height={number.height}
+            key={bar.value}
+            height={bar.height}
+            color={bar.color}
           />
         )
       })}

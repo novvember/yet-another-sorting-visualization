@@ -1,3 +1,5 @@
+import { hslGradient } from "./hslGradient";
+
 function getRelativeValue({value, minValue = 1, maxValue}) {
   const relativeValue = (value - minValue) / (maxValue - minValue);
   return relativeValue;
@@ -13,11 +15,12 @@ export function getNewArray(n) {
   const newArray = [];
 
   for (let i = 1; i <= n; i++) {
+    const percent = getRelativeValue({value: i, maxValue: n});
+
     const element = {
       value: i,
-      height: getAjustedValue({
-        relativeValue: getRelativeValue({value: i, maxValue: n})
-      }),
+      height: getAjustedValue({ relativeValue: percent }),
+      color: hslGradient.getColor(percent * 100),
       isActive: false,
     };
 
