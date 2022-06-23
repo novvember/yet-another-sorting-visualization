@@ -67,6 +67,7 @@
 
 .input_type_form-input_error {
   border-bottom-color: tomato;
+  outline-color: tomato;
 }
 
 .input_type_form-button {
