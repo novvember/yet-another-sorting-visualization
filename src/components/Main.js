@@ -22,7 +22,8 @@ function Main() {
   }
 
   function handleRunSorting() {
-    setBarsArray( bubleSort );
+    bubleSort(barsArray, setBarsArray);
+    //setBarsArray( bubleSort );
   }
 
   return (
