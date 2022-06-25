@@ -5,4 +5,18 @@
   box-sizing: border-box;
   flex-basis: 1px;
   flex-grow: 1;
+  transition: opacity 0.3s;
+
+}
+
+.field_status_in-progress * {
+  opacity: 0.1;
+}
+
+.element_status_active {
+  opacity: 1;
+}
+
+.element_status_done {
+  opacity: .7;
 }

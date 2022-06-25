@@ -22,6 +22,7 @@ export function getNewArray(n) {
       height: getHeight({ relativeValue: percent }),
       color: hslGradient.getColor(percent * 100),
       isActive: false,
+      isDone: false,
     };
 
     newArray.push(element);

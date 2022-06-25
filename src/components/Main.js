@@ -12,6 +12,8 @@ import bubleSort from "../utils/bubleSort";
 function Main() {
   const [barsNumber, setBarsNumber] = React.useState(100);
   const [barsArray, setBarsArray] = React.useState( shuffleArray(getNewArray(barsNumber)) );
+  const [isInProgress, setIsInProgress] = React.useState(false);
+
 
   React.useEffect(() => {
     setBarsArray( shuffleArray(getNewArray(barsNumber)) );
@@ -21,9 +23,10 @@ function Main() {
     setBarsArray(shuffleArray);
   }
 
-  function handleRunSorting() {
-    bubleSort(barsArray, setBarsArray);
-    //setBarsArray( bubleSort );
+  async function handleRunSorting() {
+    setIsInProgress(true);
+    await bubleSort(barsArray, setBarsArray);
+    setIsInProgress(false);
   }
 
   return (
@@ -37,6 +40,7 @@ function Main() {
       <Playground>
         <Field
           barsArray={barsArray}
+          isInProgress={isInProgress}
         />
         <Controls />
         <Results />
