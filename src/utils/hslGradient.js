@@ -31,7 +31,10 @@ class HslGradient {
     let max = 100;
     for (let key of this._intervals) {
       if (percent > +key) min = +key;
-      if (percent < +key) max = +key;
+      if (percent < +key) {
+        max = +key;
+        break;
+      };
     }
     return [min, max];
   }
@@ -44,6 +47,12 @@ class HslGradient {
     return Math.round(position * (max - min) + min);
   }
 
+
+  _getApproxHue(position, min, max) {
+    if (max < min) max += 360;
+    return Math.round(position * (max - min) + min) % 360;
+  }
+
   getColor(percent) {
     const [minInterval, maxInterval] = this._getInterval(percent);
     const positionInInterval = this._getPositionInInterval(percent, [minInterval, maxInterval]);
@@ -51,7 +60,7 @@ class HslGradient {
     const minColor = this._gradient[minInterval];
     const maxColor = this._gradient[maxInterval];
 
-    const h = this._getApproxValue(positionInInterval, minColor.h, maxColor.h);
+    const h = this._getApproxHue(positionInInterval, minColor.h, maxColor.h);
     const s = this._getApproxValue(positionInInterval, minColor.s, maxColor.s);
     const l = this._getApproxValue(positionInInterval, minColor.l, maxColor.l);
 
@@ -61,7 +70,7 @@ class HslGradient {
   }
 }
 
-
+// Gradient generated with https://www.joshwcomeau.com/gradient-generator/
 export const hslGradient = new HslGradient([
   'hsl(283deg 100% 22%) 0%',
   'hsl(298deg 100% 25%) 11%',

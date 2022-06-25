@@ -5,7 +5,7 @@ function getRelativeValue({value, minValue = 1, maxValue}) {
   return relativeValue;
 }
 
-function getHeight({relativeValue, minHeight = 1, maxHeight = 100,
+function getHeight({relativeValue, minHeight = 10, maxHeight = 100,
 }) {
   const height = relativeValue * (maxHeight - minHeight) + minHeight;
   return height;
