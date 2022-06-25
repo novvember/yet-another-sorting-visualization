@@ -2,7 +2,7 @@ import React from "react";
 
 import NumberInput from "./NumberInput";
 
-function GeneralControls({barsNumber, onBarsChange, onShuffle}) {
+function GeneralControls({barsNumber, onBarsChange, onShuffle, onRunSorting}) {
 
   const [barsValue, setBarsValue] = React.useState(barsNumber);
 
@@ -27,7 +27,7 @@ function GeneralControls({barsNumber, onBarsChange, onShuffle}) {
       </form>
 
       <button type="button" className="input" onClick={onShuffle}>🔀 Перемешать</button>
-      <button type="button" className="input input_important" disabled>⏭ Запустить</button>
+      <button type="button" className="input input_important" onClick={onRunSorting}>⏭ Запустить</button>
       <button type="button" className="input" disabled>⏮ Запустить наоборот</button>
     </div>
   );

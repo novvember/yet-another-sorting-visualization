@@ -7,7 +7,7 @@ import Controls from "./Controls";
 import Results from "./Results";
 
 import {getNewArray, shuffleArray} from '../utils/utils.js';
-
+import bubleSort from "../utils/bubleSort";
 
 function Main() {
   const [barsNumber, setBarsNumber] = React.useState(100);
@@ -21,12 +21,17 @@ function Main() {
     setBarsArray(shuffleArray);
   }
 
+  function handleRunSorting() {
+    setBarsArray( bubleSort );
+  }
+
   return (
     <main>
       <GeneralControls
         barsNumber={barsNumber}
         onBarsChange={setBarsNumber}
         onShuffle={handleShuffle}
+        onRunSorting={handleRunSorting}
       />
       <Playground>
         <Field
