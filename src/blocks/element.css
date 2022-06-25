@@ -5,18 +5,41 @@
   box-sizing: border-box;
   flex-basis: 1px;
   flex-grow: 1;
-  transition: opacity 0.3s;
-
+  transition: opacity 0.2s;
+  position: relative;
 }
 
+/* Все элементы во время расчета */
 .field_status_in-progress * {
   opacity: 0.1;
 }
 
+/* Обрабатываемый сейчас элемент */
 .element_status_active {
   opacity: 1;
+  box-shadow: 0 0 .5em rgba(0, 0, 0, .2);
 }
 
+.element_status_active::before,
+.element_status_active::after {
+  position: absolute;
+  left: 50%;
+  color: rgba(128, 128, 128, .5);
+}
+
+.element_status_active::before {
+  content: '⮟';
+  top: -.1em;
+  transform: translate(-50%, -100%);
+}
+
+.element_status_active::after {
+  content: '⮝';
+  bottom: -.1em;
+  transform: translate(-50%, 100%);
+}
+
+/* Отсортированный элемент */
 .element_status_done {
   opacity: .7;
 }

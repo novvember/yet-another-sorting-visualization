@@ -10,7 +10,7 @@ import {getNewArray, shuffleArray} from '../utils/utils.js';
 import bubleSort from "../utils/bubleSort";
 
 function Main() {
-  const [barsNumber, setBarsNumber] = React.useState(100);
+  const [barsNumber, setBarsNumber] = React.useState(20);
   const [barsArray, setBarsArray] = React.useState( shuffleArray(getNewArray(barsNumber)) );
   const [isInProgress, setIsInProgress] = React.useState(false);
 

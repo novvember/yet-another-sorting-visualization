@@ -23,7 +23,7 @@ function GeneralControls({barsNumber, onBarsChange, onShuffle, onRunSorting}) {
           />
           <span> столбиков</span>
         </label>
-        <button type="submit" className="input input_type_form-button">➡</button>
+        <button type="submit" className="input input_type_form-button">❯</button>
       </form>
 
       <button type="button" className="input" onClick={onShuffle}>🔀 Перемешать</button>
