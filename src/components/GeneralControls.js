@@ -2,7 +2,7 @@ import React from "react";
 
 import NumberInput from "./NumberInput";
 
-function GeneralControls({barsNumber, onBarsChange, onShuffle, onRunSorting}) {
+function GeneralControls({barsNumber, onBarsChange, onShuffle, onRunSorting, delay, onDelayChange}) {
 
   const [barsValue, setBarsValue] = React.useState(barsNumber);
 
@@ -11,8 +11,28 @@ function GeneralControls({barsNumber, onBarsChange, onShuffle, onRunSorting}) {
     onBarsChange(barsValue);
   }
 
+  function handleDelayChange(event) {
+    onDelayChange(event.target.value);
+  }
+
   return (
     <div className="general-controls">
+      <form className="input input_type_form">
+        <label>
+          <span>Скорость </span>
+          <input
+            type="range"
+            name="delay"
+            min="50"
+            max="1000"
+            step="50"
+            onChange={handleDelayChange}
+            value={delay}
+          />
+          <span> {delay}</span>
+        </label>
+      </form>
+
       <form className="input input_type_form" onSubmit={handleBarsSubmit}>
         <label>
           <NumberInput

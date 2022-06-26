@@ -15,6 +15,7 @@ function Main() {
   const [barsArray, setBarsArray] = React.useState( shuffleArray(getNewArray(barsNumber)) );
   const [isInProgress, setIsInProgress] = React.useState(false);
   const [selectedAlgorithm, setSelectedAlgorithm] = React.useState(sortingAlgorithms[0]);
+  const [delay, setDelay] = React.useState(500);
 
   React.useEffect(() => {
     setBarsArray( shuffleArray(getNewArray(barsNumber)) );
@@ -36,7 +37,7 @@ function Main() {
       sortArray: selectedAlgorithm.f,
       array: barsArray,
       setArray: setBarsArray,
-      delay: 500,
+      delay: delay,
     });
     await sorting.start();
     setIsInProgress(false);
@@ -47,6 +48,8 @@ function Main() {
       <GeneralControls
         barsNumber={barsNumber}
         onBarsChange={setBarsNumber}
+        delay={delay}
+        onDelayChange={setDelay}
         onShuffle={handleShuffle}
         onRunSorting={handleRunSorting}
       />
