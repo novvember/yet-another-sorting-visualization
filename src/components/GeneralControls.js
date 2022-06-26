@@ -19,8 +19,9 @@ function GeneralControls({barsNumber, onBarsChange, onShuffle, onRunSorting, del
     <div className="general-controls">
       <form className="input input_type_form">
         <label>
-          <span>Скорость </span>
+          <span>Замедление</span>
           <input
+            className="input input_type_form-input input_type_range"
             type="range"
             name="delay"
             min="50"
@@ -29,7 +30,7 @@ function GeneralControls({barsNumber, onBarsChange, onShuffle, onRunSorting, del
             onChange={handleDelayChange}
             value={delay}
           />
-          <span> {delay}</span>
+          <span>{delay}</span>
         </label>
       </form>
 

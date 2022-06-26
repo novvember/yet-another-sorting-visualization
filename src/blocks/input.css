@@ -77,3 +77,8 @@
   border-radius: .2em;
   border: 1px solid #ccc;
 }
+
+.input_type_form label {
+  display: flex;
+  gap: .3em;
+}
