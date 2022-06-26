@@ -8,33 +8,37 @@ import Results from "./Results";
 
 import {getNewArray, shuffleArray} from '../utils/utils.js';
 import { Sorting } from "../utils/Sorting.js";
-import bubbleSort from "../utils/bubbleSort";
+import sortingAlgorithms from "../utils/sorting-algorithms/sortingAlgorithms";
 
 function Main() {
   const [barsNumber, setBarsNumber] = React.useState(20);
   const [barsArray, setBarsArray] = React.useState( shuffleArray(getNewArray(barsNumber)) );
   const [isInProgress, setIsInProgress] = React.useState(false);
-
+  const [selectedAlgorithm, setSelectedAlgorithm] = React.useState(sortingAlgorithms[0]);
 
   React.useEffect(() => {
     setBarsArray( shuffleArray(getNewArray(barsNumber)) );
-  }, [barsNumber])
+  }, [barsNumber]);
 
   function handleShuffle() {
     setBarsArray(shuffleArray);
   }
 
+  function handleChangeAlgorithm(event) {
+    setSelectedAlgorithm( sortingAlgorithms.find(algorithm => {
+      return algorithm.id === event.target.value;
+    }));
+  }
+
   async function handleRunSorting() {
     setIsInProgress(true);
     const sorting = new Sorting({
-      sortArray: bubbleSort,
+      sortArray: selectedAlgorithm.f,
       array: barsArray,
       setArray: setBarsArray,
       delay: 500,
     });
     await sorting.start();
-
-    // await bubleSort(barsArray, setBarsArray);
     setIsInProgress(false);
   }
 
@@ -51,7 +55,10 @@ function Main() {
           barsArray={barsArray}
           isInProgress={isInProgress}
         />
-        <Controls />
+        <Controls
+          list={sortingAlgorithms}
+          onChange={handleChangeAlgorithm}
+        />
         <Results />
       </Playground>
     </main>

@@ -1,9 +1,16 @@
-function Controls() {
+function Controls({list, onChange}) {
   return (
     <div className="controls playground__controls">
       <h2 className="controls__title">Способ сортировки</h2>
-      <select name="algorithm" className="input input_important">
-        <option value="value1" name="bubleSort">... пузырьком</option>
+      <select name="algorithm" className="input input_important" onChange={onChange}>
+        {list.map(algorithm => (
+          <option
+            key={algorithm.id}
+            name={algorithm.id}
+          >
+            {algorithm.name}
+          </option>
+          ))}
       </select>
     </div>
   );
