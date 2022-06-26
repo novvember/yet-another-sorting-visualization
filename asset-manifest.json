@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/yet-another-sorting-visualization/static/css/main.a29d69a6.css",
-    "main.js": "/yet-another-sorting-visualization/static/js/main.e758eca8.js",
+    "main.css": "/yet-another-sorting-visualization/static/css/main.845c7bcf.css",
+    "main.js": "/yet-another-sorting-visualization/static/js/main.23ef6619.js",
     "static/media/Merriweather-Regular.ttf": "/yet-another-sorting-visualization/static/media/Merriweather-Regular.da67ca8c38ef44c4773d.ttf",
     "static/media/Merriweather-Light.ttf": "/yet-another-sorting-visualization/static/media/Merriweather-Light.43706a2883eb57c79284.ttf",
     "static/media/Merriweather-BoldItalic.ttf": "/yet-another-sorting-visualization/static/media/Merriweather-BoldItalic.16252c125b2ba7eaf70a.ttf",
@@ -23,11 +23,11 @@
     "static/media/OpenSans-Light.ttf": "/yet-another-sorting-visualization/static/media/OpenSans-Light.846a12caf01a940847a7.ttf",
     "static/media/OpenSans-SemiBold.ttf": "/yet-another-sorting-visualization/static/media/OpenSans-SemiBold.d7261533b9a545ddc769.ttf",
     "index.html": "/yet-another-sorting-visualization/index.html",
-    "main.a29d69a6.css.map": "/yet-another-sorting-visualization/static/css/main.a29d69a6.css.map",
-    "main.e758eca8.js.map": "/yet-another-sorting-visualization/static/js/main.e758eca8.js.map"
+    "main.845c7bcf.css.map": "/yet-another-sorting-visualization/static/css/main.845c7bcf.css.map",
+    "main.23ef6619.js.map": "/yet-another-sorting-visualization/static/js/main.23ef6619.js.map"
   },
   "entrypoints": [
-    "static/css/main.a29d69a6.css",
-    "static/js/main.e758eca8.js"
+    "static/css/main.845c7bcf.css",
+    "static/js/main.23ef6619.js"
   ]
 }
