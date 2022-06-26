@@ -6,11 +6,11 @@ function Results() {
       <ul className="results__list">
         <li className="results__list-item">
           <span className="results__text">Операций:</span>
-          <span className="results__result">300</span>
+          <span className="results__result"></span>
         </li>
         <li className="results__list-item">
           <span className="results__text">Время:</span>
-          <span className="results__result">58</span>
+          <span className="results__result"></span>
         </li>
 
       </ul>

@@ -7,7 +7,8 @@ import Controls from "./Controls";
 import Results from "./Results";
 
 import {getNewArray, shuffleArray} from '../utils/utils.js';
-import bubleSort from "../utils/bubleSort";
+import { Sorting } from "../utils/Sorting.js";
+import bubbleSort from "../utils/bubbleSort";
 
 function Main() {
   const [barsNumber, setBarsNumber] = React.useState(20);
@@ -25,7 +26,15 @@ function Main() {
 
   async function handleRunSorting() {
     setIsInProgress(true);
-    await bubleSort(barsArray, setBarsArray);
+    const sorting = new Sorting({
+      sortArray: bubbleSort,
+      array: barsArray,
+      setArray: setBarsArray,
+      delay: 500,
+    });
+    await sorting.start();
+
+    // await bubleSort(barsArray, setBarsArray);
     setIsInProgress(false);
   }
 
