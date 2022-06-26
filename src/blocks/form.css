@@ -1,0 +1,53 @@
+.form {
+  cursor: auto;
+  display: flex;
+  gap: .5em;
+  align-items: baseline;
+}
+
+.form:active {
+  opacity: 1;
+}
+
+.form__label {
+  display: flex;
+  gap: .5em;
+  align-items: center;
+}
+
+.form__range-input {
+  accent-color: #000;
+  min-width: 50px;
+  max-width: 100px;
+}
+
+.form__range-input:focus {
+  outline-offset: .3em;
+}
+
+.form__number-input {
+  background-color: transparent;
+  border: none;
+  width: 6ex;
+  padding: 0;
+  text-align: center;
+  border-bottom: 1px dashed #242424;
+
+}
+
+.form__number-input:focus {
+  outline-offset: .3em;
+}
+
+.form__number-input_error {
+  border-bottom-color: tomato;
+  outline-color: tomato;
+}
+
+.form__button {
+  cursor: pointer;
+  background-color: #fff;
+  padding: 0 .3em;
+  border-radius: .2em;
+  border: 1px solid #ccc;
+}
