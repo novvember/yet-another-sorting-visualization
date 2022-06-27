@@ -51,7 +51,7 @@ function Form({ title, hasButton, min, max, step, defaultValue, onChange, onSubm
 
       {hasButton && (
         <button className="form__button" type="submit" aria-label="Сохранить">
-          🡢
+          ↵
         </button>
       )}
     </form>

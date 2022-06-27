@@ -23,20 +23,28 @@
 .element_status_active::before,
 .element_status_active::after {
   position: absolute;
+  width: 1em;
+  height: 1em;
   left: 50%;
   color: rgba(128, 128, 128, .5);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: .3;
 }
 
 .element_status_active::before {
-  content: '⮟';
+  content: '';
   top: -.1em;
   transform: translate(-50%, -100%);
+  background-image: url(../images/icon__arrow-down.svg);
 }
 
 .element_status_active::after {
-  content: '⮝';
+  content: '';
   bottom: -.1em;
   transform: translate(-50%, 100%);
+  background-image: url(../images/icon__arrow-up.svg);
 }
 
 /* Отсортированный элемент */
