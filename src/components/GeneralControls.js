@@ -2,8 +2,15 @@ import React from "react";
 
 import Form from "./Form";
 
-function GeneralControls({barsNumber, onBarsChange, onShuffle, onRunSorting, delay, onDelayChange}) {
-
+function GeneralControls({
+  barsNumber,
+  onBarsChange,
+  onShuffle,
+  onRunSorting,
+  delay,
+  onDelayChange,
+  isInProgress,
+}) {
   return (
     <div className="general-controls">
       <Form
@@ -15,6 +22,7 @@ function GeneralControls({barsNumber, onBarsChange, onShuffle, onRunSorting, del
         defaultValue={delay}
         onChange={onDelayChange}
         onSubmit={null}
+        isDisabled={isInProgress}
       />
 
       <Form
@@ -26,11 +34,27 @@ function GeneralControls({barsNumber, onBarsChange, onShuffle, onRunSorting, del
         defaultValue={barsNumber}
         onChange={null}
         onSubmit={onBarsChange}
+        isDisabled={isInProgress}
       />
 
-      <button type="button" className="input" onClick={onShuffle}>🔀 Перемешать</button>
-      <button type="button" className="input input_important" onClick={onRunSorting}>⏭ Запустить</button>
-      <button type="button" className="input" disabled>⏮ Запустить наоборот</button>
+      <button
+        type="button"
+        className="input"
+        onClick={onShuffle}
+        disabled={isInProgress}
+      >
+        🔀 Перемешать
+      </button>
+      <button
+        type="button"
+        className="input input_important"
+        onClick={onRunSorting}
+      >
+        ⏭ Запустить
+      </button>
+      <button type="button" className="input" disabled>
+        ⏮ Запустить наоборот
+      </button>
     </div>
   );
 }

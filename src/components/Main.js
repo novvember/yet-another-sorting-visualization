@@ -52,6 +52,7 @@ function Main() {
         onDelayChange={setDelay}
         onShuffle={handleShuffle}
         onRunSorting={handleRunSorting}
+        isInProgress={isInProgress}
       />
       <Playground>
         <Field

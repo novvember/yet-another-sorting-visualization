@@ -1,7 +1,17 @@
 import React from "react";
 
-function Form({ title, hasButton, min, max, step, defaultValue, onChange, onSubmit }) {
-  const errorClass = 'form__number-input_error';
+function Form({
+  title,
+  hasButton,
+  min,
+  max,
+  step,
+  defaultValue,
+  onChange,
+  onSubmit,
+  isDisabled,
+}) {
+  const errorClass = "form__number-input_error";
 
   const [value, setValue] = React.useState(defaultValue);
   const [isValid, setIsValid] = React.useState(true);
@@ -13,7 +23,7 @@ function Form({ title, hasButton, min, max, step, defaultValue, onChange, onSubm
   function handleChange(event) {
     const currentValue = +event.target.value;
     setValue(currentValue);
-    if ( checkIsValid(currentValue) ) {
+    if (checkIsValid(currentValue)) {
       setIsValid(true);
       if (onChange) onChange(currentValue);
     } else {
@@ -23,11 +33,14 @@ function Form({ title, hasButton, min, max, step, defaultValue, onChange, onSubm
 
   function handleSubmit(event) {
     event.preventDefault();
-    if ( checkIsValid(value) && onSubmit) onSubmit(value);
+    if (checkIsValid(value) && onSubmit) onSubmit(value);
   }
 
   return (
-    <form className="input form" onSubmit={handleSubmit}>
+    <form
+      className={"input form" + (isDisabled ? " input_disabled" : "")}
+      onSubmit={handleSubmit}
+    >
       <label className="form__label">
         <span className="form__title">{title}</span>
         <input
@@ -41,7 +54,7 @@ function Form({ title, hasButton, min, max, step, defaultValue, onChange, onSubm
         />
       </label>
       <input
-        className={'form__number-input ' + (!isValid ? errorClass : '')}
+        className={"form__number-input " + (!isValid ? errorClass : "")}
         type="number"
         minLength={min}
         maxLength={max}

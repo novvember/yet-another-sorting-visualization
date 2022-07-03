@@ -4,7 +4,7 @@
   border-radius: .5em;
   padding: .5em;
   cursor: pointer;
-  transition: color .3s, background-color .3s;
+  transition: color .3s, background-color .3s, opacity .3s;
 }
 
 .input:hover {
@@ -20,10 +20,11 @@
   box-sizing: border-box;
 }
 
+.input_disabled,
 .input:disabled {
   pointer-events: none;
   cursor: not-allowed;
-  opacity: .4;
+  opacity: .5;
 }
 
 .input_important {
