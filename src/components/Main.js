@@ -16,6 +16,7 @@ function Main() {
   const [isInProgress, setIsInProgress] = React.useState(false);
   const [selectedAlgorithm, setSelectedAlgorithm] = React.useState(sortingAlgorithms[0]);
   const [delay, setDelay] = React.useState(500);
+  const isStopped = React.useRef({value: false});
 
   React.useEffect(() => {
     setBarsArray( shuffleArray(getNewArray(barsNumber)) );
@@ -38,9 +39,14 @@ function Main() {
       array: barsArray,
       setArray: setBarsArray,
       delay: delay,
+      isStopped: isStopped.current,
     });
     await sorting.start();
     setIsInProgress(false);
+  }
+
+  function handleStopSorting() {
+    isStopped.current.value = true;
   }
 
   return (
@@ -52,6 +58,7 @@ function Main() {
         onDelayChange={setDelay}
         onShuffle={handleShuffle}
         onRunSorting={handleRunSorting}
+        onStopSorting={handleStopSorting}
         isInProgress={isInProgress}
       />
       <Playground>

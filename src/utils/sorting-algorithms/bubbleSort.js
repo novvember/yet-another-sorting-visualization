@@ -6,8 +6,8 @@ export default async function bubbleSort({
   clearActive,
   setDone,
   clearStatuses,
+  isStopped,
 }) {
-
   console.log('bubble sort started');
 
   const n = array.length;
@@ -33,13 +33,17 @@ export default async function bubbleSort({
         await renderWithDelay();
 
         doneElement = a;
+
+        if (isStopped.value) break;
       };
 
       clearActive(a, b);
+      if (isStopped.value) break;
     }
 
     setDone(doneElement);
     if (isSorted) break;
+    if (isStopped.value) break;
   }
 
   clearStatuses();

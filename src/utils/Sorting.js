@@ -4,11 +4,13 @@ export class Sorting {
     array,
     setArray,
     delay,
+    isStopped
   }) {
     this._sortArray = sortArray;
     this._array = array.slice();
     this._setArray = setArray;
     this._delay = delay;
+    this._isStopped = isStopped;
   }
 
   _wait(delay) {
@@ -56,6 +58,8 @@ export class Sorting {
       clearActive: this._clearActive,
       setDone: this._setDone,
       clearStatuses: this._clearStatuses.bind(this),
+      isStopped: this._isStopped,
     });
+    this._isStopped.value = false;
   }
 }

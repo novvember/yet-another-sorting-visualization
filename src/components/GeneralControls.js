@@ -7,6 +7,7 @@ function GeneralControls({
   onBarsChange,
   onShuffle,
   onRunSorting,
+  onStopSorting,
   delay,
   onDelayChange,
   isInProgress,
@@ -14,7 +15,7 @@ function GeneralControls({
   return (
     <div className="general-controls">
       <Form
-        title="Замедление"
+        title="Скорость"
         hasButton={false}
         min="50"
         max="1000"
@@ -48,9 +49,9 @@ function GeneralControls({
       <button
         type="button"
         className="input input_important"
-        onClick={onRunSorting}
+        onClick={isInProgress ? onStopSorting : onRunSorting}
       >
-        ⏭ Запустить
+        {isInProgress ? "⏹️ Остановить" : "⏭ Запустить"}
       </button>
       <button type="button" className="input" disabled>
         ⏮ Запустить наоборот
