@@ -6,7 +6,7 @@ function Controls({list, onChange}) {
         {list.map(algorithm => (
           <option
             key={algorithm.id}
-            name={algorithm.id}
+            value={algorithm.id}
           >
             {algorithm.name}
           </option>
