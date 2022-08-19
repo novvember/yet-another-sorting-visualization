@@ -8,8 +8,17 @@ export default async function quickSort({
   clearStatuses, // убрать любые отметки с элементов: clearStatuses()
   isStopped, // параметр для проверки остановки пользователем: if (isStopped.value)
 }) {
-
   async function sort(startIndex, endIndex) {
+    async function sortSubarray(startIndex, endIndex) {
+      const elements = array.slice(startIndex, endIndex) || [];
+
+      if (elements.length > 1) {
+        await sort(startIndex, endIndex);
+      } else {
+        setDone(...elements);
+      }
+    }
+
     const pivot = array[startIndex];
 
     setActive(pivot);
@@ -31,6 +40,8 @@ export default async function quickSort({
 
       await renderWithDelay();
       clearActive(element);
+
+      if (isStopped.value) return;
     }
     clearActive(pivot);
     setDone(pivot);
@@ -38,16 +49,6 @@ export default async function quickSort({
     const pivotIndex = array.indexOf(pivot);
     const lowerArrayIndexes = [startIndex, pivotIndex];
     const higherArrayIndexes = [pivotIndex + 1, endIndex];
-
-    async function sortSubarray(startIndex, endIndex) {
-      const elements = array.slice(startIndex, endIndex) || [];
-
-      if (elements.length > 1) {
-        await sort(startIndex, endIndex);
-      } else {
-        setDone(...elements);
-      }
-    }
 
     await sortSubarray(...lowerArrayIndexes);
     await sortSubarray(...higherArrayIndexes);
