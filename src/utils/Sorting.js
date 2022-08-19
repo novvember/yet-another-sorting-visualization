@@ -28,7 +28,7 @@ export class Sorting {
   }
 
   _setDone(...elements) {
-    elements.forEach(element => element.isDone = true);
+    elements.forEach(element => element ? element.isDone = true : false);
   }
 
   _clearDone(...elements) {
