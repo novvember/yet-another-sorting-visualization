@@ -39,17 +39,18 @@ export default async function quickSort({
     const lowerArrayIndexes = [startIndex, pivotIndex];
     const higherArrayIndexes = [pivotIndex + 1, endIndex];
 
-    if (lowerArrayIndexes[1] - lowerArrayIndexes[0] > 1) {
-      await sort(...lowerArrayIndexes);
-    } else {
-      setDone(array[lowerArrayIndexes[0]]);
+    async function sortSubarray(startIndex, endIndex) {
+      const elements = array.slice(startIndex, endIndex) || [];
+
+      if (elements.length > 1) {
+        await sort(startIndex, endIndex);
+      } else {
+        setDone(...elements);
+      }
     }
 
-    if (higherArrayIndexes[1] - higherArrayIndexes[0] > 1) {
-      await sort(...higherArrayIndexes);
-    } else {
-      setDone(array[higherArrayIndexes[0]]);
-    }
+    await sortSubarray(...lowerArrayIndexes);
+    await sortSubarray(...higherArrayIndexes);
   }
 
   console.log('quick sort started');
