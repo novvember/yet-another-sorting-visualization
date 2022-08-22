@@ -4,12 +4,12 @@ import quickSort from "./quickSort"
 const sortingAlgorithms = [
   {
     id: 'bubbleSort',
-    name: '... пузырьком',
+    name: 'Сортировка пузырьком',
     f: bubbleSort,
   },
   {
     id: 'quickSort',
-    name: 'Быстрая...',
+    name: 'Быстрая сортировка',
     f: quickSort,
   },
 ]
