@@ -18,7 +18,7 @@ export default async function insertionSort({
     const currentValue = currentElement.value;
     let j = i;
 
-    while (j > 0 && array[j - 1] > currentValue) {
+    while (j > 0 && array[j - 1].value > currentValue) {
       j--;
     }
 
