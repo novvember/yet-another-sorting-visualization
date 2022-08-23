@@ -7,29 +7,45 @@ export default async function insertionSort({
   setDone, // отметить элементы массива как выполненные: setDone(doneElement)
   clearStatuses, // убрать любые отметки с элементов: clearStatuses()
   isStopped, // параметр для проверки остановки пользователем: if (isStopped.value)
+  onComparison, // функция для учета количества сравнений: onComparison();
 }) {
   console.log('insertion sort started');
 
-  for (let i = 0; i < array.length; i++) {
+  setDone(array[0]);
+
+  for (let i = 1; i < array.length; i++) {
     const currentElement = array[i];
     setActive(currentElement);
     await renderWithDelay();
 
     const currentValue = currentElement.value;
+
     let j = i;
 
-    while (j > 0 && array[j - 1] > currentValue) {
+    while (j > 0) {
+      const elementToCompare = array[j - 1];
+      setActive(elementToCompare);
+      onComparison();
+      await renderWithDelay();
+
+      clearActive(elementToCompare);
+      if (elementToCompare.value <= currentValue) break;
       j--;
+      if (isStopped.value) break;
     }
+
+    if (isStopped.value) break;
 
     move(array, i, j);
     await renderWithDelay();
-    clearActive(currentElement)
+    clearActive(currentElement);
+    setDone(currentElement);
+
+    if (isStopped.value) break;
   }
 
   clearStatuses();
   render();
-
 
   console.log('insertion sort done');
 }

@@ -18,6 +18,8 @@ function Main() {
   const [delay, setDelay] = React.useState(500);
   const isStopped = React.useRef({value: false});
 
+  const [comparisonCount, setComparisonCount] = React.useState(0);
+
   React.useEffect(() => {
     setBarsArray( shuffleArray(getNewArray(barsNumber)) );
   }, [barsNumber]);
@@ -34,12 +36,14 @@ function Main() {
 
   async function handleRunSorting() {
     setIsInProgress(true);
+    resetStatistics();
     const sorting = new Sorting({
       sortArray: selectedAlgorithm.f,
       array: barsArray,
       setArray: setBarsArray,
       delay: delay,
       isStopped: isStopped.current,
+      onComparison: handleComparison,
     });
     await sorting.start();
     setIsInProgress(false);
@@ -47,6 +51,14 @@ function Main() {
 
   function handleStopSorting() {
     isStopped.current.value = true;
+  }
+
+  function resetStatistics() {
+    setComparisonCount(0);
+  }
+
+  function handleComparison() {
+    setComparisonCount(count => count + 1);
   }
 
   return (
@@ -70,7 +82,9 @@ function Main() {
           list={sortingAlgorithms}
           onChange={handleChangeAlgorithm}
         />
-        <Results />
+        <Results
+          comparisonCount={comparisonCount}
+        />
       </Playground>
     </main>
   );

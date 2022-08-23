@@ -4,13 +4,15 @@ export class Sorting {
     array,
     setArray,
     delay,
-    isStopped
+    isStopped,
+    onComparison,
   }) {
     this._sortArray = sortArray;
     this._array = array.slice();
     this._setArray = setArray;
     this._delay = delay;
     this._isStopped = isStopped;
+    this._onComparison = onComparison;
   }
 
   _wait(delay) {
@@ -59,6 +61,7 @@ export class Sorting {
       setDone: this._setDone,
       clearStatuses: this._clearStatuses.bind(this),
       isStopped: this._isStopped,
+      onComparison: this._onComparison,
     });
     this._isStopped.value = false;
   }

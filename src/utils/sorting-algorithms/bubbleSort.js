@@ -7,6 +7,7 @@ export default async function bubbleSort({
   setDone,
   clearStatuses,
   isStopped,
+  onComparison,
 }) {
   console.log('bubble sort started');
 
@@ -24,6 +25,7 @@ export default async function bubbleSort({
       doneElement = b;
 
       setActive(a, b);
+      onComparison();
       await renderWithDelay();
 
       if (a.value > b.value) {
