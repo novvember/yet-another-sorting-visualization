@@ -25,10 +25,10 @@ export default async function insertionSort({
     while (j > 0) {
       const elementToCompare = array[j - 1];
       setActive(elementToCompare);
+      onComparison();
       await renderWithDelay();
 
       clearActive(elementToCompare);
-      onComparison();
       if (elementToCompare.value <= currentValue) break;
       j--;
       if (isStopped.value) break;
