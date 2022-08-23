@@ -36,13 +36,14 @@ function Main() {
 
   async function handleRunSorting() {
     setIsInProgress(true);
+    resetStatistics();
     const sorting = new Sorting({
       sortArray: selectedAlgorithm.f,
       array: barsArray,
       setArray: setBarsArray,
       delay: delay,
       isStopped: isStopped.current,
-      onComparison: handleIncrementComparisonCount,
+      onComparison: handleComparison,
     });
     await sorting.start();
     setIsInProgress(false);
@@ -52,7 +53,11 @@ function Main() {
     isStopped.current.value = true;
   }
 
-  function handleIncrementComparisonCount() {
+  function resetStatistics() {
+    setComparisonCount(0);
+  }
+
+  function handleComparison() {
     setComparisonCount(count => count + 1);
   }
 
