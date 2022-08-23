@@ -29,12 +29,17 @@ export default async function insertionSort({
       clearActive(elementToCompare);
       if (elementToCompare.value <= currentValue) break;
       j--;
+      if (isStopped.value) break;
     }
+
+    if (isStopped.value) break;
 
     move(array, i, j);
     await renderWithDelay();
     clearActive(currentElement);
     setDone(currentElement);
+
+    if (isStopped.value) break;
   }
 
   clearStatuses();
