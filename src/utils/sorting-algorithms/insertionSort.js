@@ -7,6 +7,7 @@ export default async function insertionSort({
   setDone, // отметить элементы массива как выполненные: setDone(doneElement)
   clearStatuses, // убрать любые отметки с элементов: clearStatuses()
   isStopped, // параметр для проверки остановки пользователем: if (isStopped.value)
+  onComparison, // функция для учета количества сравнений: onComparison();
 }) {
   console.log('insertion sort started');
 
@@ -27,6 +28,7 @@ export default async function insertionSort({
       await renderWithDelay();
 
       clearActive(elementToCompare);
+      onComparison();
       if (elementToCompare.value <= currentValue) break;
       j--;
       if (isStopped.value) break;
