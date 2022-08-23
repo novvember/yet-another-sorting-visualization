@@ -7,6 +7,7 @@ export default async function quickSort({
   setDone, // отметить элементы массива как выполненные: setDone(doneElement)
   clearStatuses, // убрать любые отметки с элементов: clearStatuses()
   isStopped, // параметр для проверки остановки пользователем: if (isStopped.value)
+  onComparison,
 }) {
   async function sort(startIndex, endIndex) {
     async function sortSubarray(startIndex, endIndex) {
@@ -30,6 +31,7 @@ export default async function quickSort({
       if (i === pivotIndex) continue;
 
       setActive(element);
+      onComparison();
       await renderWithDelay();
 
       if (element.value < pivot.value) {
