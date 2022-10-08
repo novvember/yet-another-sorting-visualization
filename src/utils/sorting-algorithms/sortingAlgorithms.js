@@ -10,14 +10,14 @@ const sortingAlgorithms = [
     f: bubbleSort,
   },
   {
-    id: 'heapSort',
-    name: 'Сортировка кучей',
-    f: heapSort,
-  },
-  {
     id: 'insertionSort',
     name: 'Сортировка вставками',
     f: insertionSort,
+  },
+  {
+    id: 'heapSort',
+    name: 'Сортировка кучей',
+    f: heapSort,
   },
   {
     id: 'quickSort',
