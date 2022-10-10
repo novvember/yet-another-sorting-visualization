@@ -10,50 +10,46 @@ export default async function quickSort({
   onComparison,
 }) {
   async function sort(startIndex, endIndex) {
-    async function sortSubarray(startIndex, endIndex) {
-      const elements = array.slice(startIndex, endIndex) || [];
+    if (isStopped.value) return;
 
-      if (elements.length > 1) {
-        await sort(startIndex, endIndex);
-      } else {
-        setDone(...elements);
-      }
+    if (endIndex - startIndex <= 1) {
+      setDone(...(array.slice(startIndex, endIndex) || []));
+      return;
     }
 
-    const pivot = array[startIndex];
+    const pivot = array[getRandom(startIndex, endIndex - 1)];
 
     setActive(pivot);
     await renderWithDelay();
 
+    const m = await split(startIndex, endIndex, pivot);
+
+    clearActive(pivot);
+
+    await sort(startIndex, m);
+    await sort(m, endIndex);
+  }
+
+  async function split(startIndex, endIndex, pivot) {
+    let m = startIndex;
+
     for (let i = startIndex; i < endIndex; i++) {
+      if (isStopped.value) return;
       const element = array[i];
-      const pivotIndex = array.indexOf(pivot);
-      if (i === pivotIndex) continue;
 
       setActive(element);
       onComparison();
       await renderWithDelay();
 
       if (element.value < pivot.value) {
-        if (i >= pivotIndex) move(array, i, array.indexOf(pivot));
-      } else {
-        if (i < pivotIndex) move(array, i, array.indexOf(pivot) + 1);
+        swap(array, i, m++);
       }
 
       await renderWithDelay();
-      clearActive(element);
-
-      if (isStopped.value) return;
+      if (element !== pivot) clearActive(element);
     }
-    clearActive(pivot);
-    setDone(pivot);
 
-    const pivotIndex = array.indexOf(pivot);
-    const lowerArrayIndexes = [startIndex, pivotIndex];
-    const higherArrayIndexes = [pivotIndex + 1, endIndex];
-
-    await sortSubarray(...lowerArrayIndexes);
-    await sortSubarray(...higherArrayIndexes);
+    return m;
   }
 
   console.log('quick sort started');
@@ -65,7 +61,11 @@ export default async function quickSort({
   console.log('quick sort done');
 }
 
-function move(array, fromIndex, toIndex) {
-  array.splice(toIndex, 0, array.splice(fromIndex, 1)[0]);
+function swap(array, indexA, indexB) {
+  [array[indexA], array[indexB]] = [array[indexB], array[indexA]];
   return true;
+}
+
+function getRandom(minimum, maximum) {
+  return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 }
